@@ -76,12 +76,8 @@ class RunClassroom(object):
                 quiz_sum = sum(student_grade['quiz_grades'])
                 quiz_count_this_subject = len(grade_this_subject['quiz_grades'])
 
+                # Final grade
                 grade_this_subject['final_grade'] = quiz_sum / quiz_count_this_subject if quiz_count_this_subject else 0
-
-                # if quiz_count_this_subject:
-                #     grade_this_subject['final_grade'] = quiz_sum / quiz_count_this_subject
-                # else:
-                #     grade_this_subject['final_grade'] = 0
 
         print('\033[44m' + '***********STUDENT QUIZ AND FINAL GRADES*************' + '\033[0m')
         pprint(self.students)

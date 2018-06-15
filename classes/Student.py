@@ -1,5 +1,3 @@
-from pprint import pprint
-
 from Person import Person
 from Subject import Subject
 

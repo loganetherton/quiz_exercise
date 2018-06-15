@@ -1,5 +1,3 @@
-from pprint import pprint
-
 from random import randrange
 
 from Subject import Subject
