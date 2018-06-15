@@ -2,15 +2,31 @@
 
 Written in Python 2.7
 
-- There are teachers
-- There are students
-- Teachers teach the students in multiple classes
-- Teachers can assign quizzes to students
-- Students must complete each quiz, although partial completion is acceptable
-- Quizzes must be graded (only upon completion, I'm assuming, although it seems possible that students are graded on partial quiz completion)
-- Each student's total grade must be calculated
+### Running the application
 
-### Classes
+The application is written in plain Python, so no additional libraries should be needed. Simply clone the project and run, from the command line:
+
+`python run_classroom.py`
+
+this will provide you with a dictionary of all students which includes the student's aptitude in each subject, as well as their actual test scores and final scores.
+
+#### Behind the Scenes
+
+Each teacher is assigned a number of classrooms, as well as their proficiency with a subject. This is taken into account for the relative success or failure of each student in each subject matter.
+
+## Functionality
+
+Five teachers will be generated, each assigned one of the available subjects. No two teachers can be assigned the same subject. Each teacher will only be able to handle a specified number of students, and if more students are in a class than a teacher can handle, their effectiveness at teaching decreases.
+
+One hundred students will be generated. Each student will be assigned a proficiency in each subject, which will act as a modifier for how well they do on each subject. Additionally, each student will be assigned a proficiency coefficient for each subject, which also affects their ability to learn that subject. Finally, each student is assigned an intelligence coefficient, as well as a responsibility coefficient. These three characteristics will be used to calculate a students grade as a function of the teachers' effectiveness at teaching a subject and the amount of time that the teacher has to teach each subject.
+
+Five classes will be randomly generated and assigned one of the subjects. Each class will be assigned a single teacher, and then randomly assigned a number of students (with a cap of no more than half of the total number of students). Each class will be assigned a length, which can never exceed more than one third of the total school day.
+
+The attributes of the class and student will be used to calculate student performance on each quiz, for which there will be three per class.
+
+Finally, a chart of each students' performance will be displayed for each of the quizzes the student take, as well as each students' final grade.
+
+### Classes (including some potential future changes
 
 - Classes
 
@@ -66,14 +82,14 @@ Written in Python 2.7
     - Amount of time available to take the quiz
     - Difficulty
 
-## Functionality
+##### Future changes
 
-Five teachers will be generated, each assigned one of the available subjects. No two teachers can be assigned the same subject. Each teacher will only be able to handle a specified number of students, and if more students are in a class than a teacher can handle, their effectiveness at teaching decreases.
+Future change ideas to improve accuracy and realism
 
-One hundred students will be generated. Each student will be assigned a proficiency in each subject, which will act as a modifier for how well they do on each subject. Additionally, each student will be assigned a proficiency coefficient for each subject, which also affects their ability to learn that subject. Finally, each student is assigned an intelligence coefficient, as well as a responsibility coefficient. These three characteristics will be used to calculate a students grade as a function of the teachers' effectiveness at teaching a subject and the amount of time that the teacher has to teach each subject.
-
-Five classes will be randomly generated and assigned one of the subjects. Each class will be assigned a single teacher, and then randomly assigned a number of students (with a cap of no more than half of the total number of students). Each class will be assigned a length, which can never exceed more than one third of the total school day.
-
-The attributes of the class and student will be used to calculate student performance on each quiz, for which there will be three per class.
-
-Finally, a chart of each students' performance will be displayed for each of the quizzes the student take, as well as each students' final grade.
+- There are teachers
+- There are students
+- Teachers teach the students in multiple classes
+- Teachers can assign quizzes to students
+- Students must complete each quiz, although partial completion is acceptable
+- Quizzes must be graded (only upon completion, I'm assuming, although it seems possible that students are graded on partial quiz completion)
+- Each student's total grade must be calculated
